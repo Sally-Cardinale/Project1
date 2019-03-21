@@ -14,7 +14,7 @@
    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 </head>
-<body>
+<body id="thisBody">
 
     <div id="logo" style="float: right; z-index: 2">
         <img src="./assets/images/targ330.png">
@@ -106,13 +106,6 @@ function translateButtonClicked() {
     translateInput(userInput);
 }
 
-// function submitButtonClicked() {
-//     var userInput = $('#xmen-input').val();
-
-//     if (userInput) {
-//         $('#xmen-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
-//     }
-// }
 
 function translateInput(userInput) {
 var activeLanguage = $(".active").text();
@@ -126,21 +119,18 @@ console.log(activeLanguage);
             console.log(response);
             //displayTranslation(response);
         })
+        var obj = {
+            'elvish': {
+                backgroundColor: '#143325'
+            }
+        }
+        document.getElementById('thisBody').style.backgroundColor = obj['elvish'].backgroundColor
 }
 
 function displayTranslation(response) {
     $('#text-output').empty();
     document.getElementById("text-output").innerHTML = response.contents.translated;
     console.log(response.contents.translated);
-    // for (var i = 0; i < response.data.length; i++) {
-    //     var rating = "<div class='ratings'> Rating:  " + (response.data[i].rating) + " </div>";
-    //     var image = rating + '<img src= " ' + response.data[i].images.fixed_height_still.url +
-    //         '" data-still=" ' + response.data[i].images.fixed_height_still.url +
-    //         ' " data-animate=" ' + response.data[i].images.fixed_height.url + '" data-state="still" class="movImage" style= "width:400px; height:250px;">';
-
-    //     image = '<div class="col-md-4">' + image + "</div>";
-    //     $('#xmen').append(image);
-    // }
 
 };
 

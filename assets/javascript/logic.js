@@ -6,25 +6,17 @@
 //add class active and remove all other class active (it's a jquery function)
 
 
-function xmenButtonClicked() {
-    var userInput = $('#xmen-input').val();
-    searchGif(userInput);
-}
-
-function submitButtonClicked() {
-    var userInput = $('#xmen-input').val();
-
-    if (userInput) {
-        $('#xmen-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
+function changeLanguage (active){
+    switch (active) {
+        case 'elvish':
+            
+            break;
+    
+        default:
+            break;
     }
 }
-
-function searchGif(gifName) {
-    $.ajax({
-            url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=lKtAJLduKg5AKea2RtE4WJPj6tk4B1IW&limit=10',
-            type: 'GET',
-        })
-        .done(function(response) {
-            displayGif(response);
-        })
-}
+//grab id/ content
+//$('#id').html
+//$("body") background color
+//grab button ids 
