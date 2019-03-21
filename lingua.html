@@ -6,12 +6,16 @@
    <title>Mytholingua</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-   <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-   <link rel="stylesheet" type="text/css" href="assets/css/elvishtheme.css">
+   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+<style>
+nav .navbar-nav li a{
+ color: white !important;
+ }
+ 
+</style>
 
 </head>
 <body id="thisBody">
@@ -24,26 +28,23 @@
 <div id="mainDiv" style="z-index: 1">
 
    <nav class="navbar navbar-expand-lg">
-       <a class="navbar-brand" href="#">Mytholingua</a>
+       <a class="navbar-brand" href="#" style="color: #ccc;">Mytholingua</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
            <li class="nav-item">
-            <a class="nav-link" href="#">Valyrian</a>
+            <a class="nav-link" href="#" onclick="changeLanguage('valyrian');">Valyrian</a>
             </li>
            <li class="nav-item">
-               <a class="nav-link" href="#">Dothraki</a>
+               <a class="nav-link" href="#" onclick="changeLanguage('dothraki');">Dothraki</a>
            </li>
            <li class="nav-item">
-               <a class="nav-link active" href="#">Quenya</a>
+               <a class="nav-link active" href="#" onclick="changeLanguage('quenya');">Elvish</a>
            </li>
            <li class="nav-item">
-               <a class="nav-link" href="#">Klingon</a>
-           </li>
-           <li class="nav-item">
-               <a class="nav-link" href="#">Minion</a>
+               <a class="nav-link" href="#" onclick="changeLanguage('minion');">Minion</a>
              </li>
          </ul>
        </div>
@@ -98,17 +99,54 @@
 </div>
 
 <script>
+var activeLanguage;
+function changeLanguage (active){
+    console.log(active);
+    activeLanguage = active;
+    switch (active) {
+        case 'quenya':
+            console.log(activeLanguage);
+            document.body.style.backgroundColor="#1c3226";
+            document.getElementById("translate-button").style.background="#495c38";
+            document.getElementById("clear-button").style.background="#495c38";
+            document.getElementById('content').innerHTML = "<h1>Elvish</h1><p>The elvish languages were the first thing Tolkien created for his mythos, starting with what he originally called 'Qenya', the first primitive form of Elvish. This was later called Quenya (High-elven) and is one of the two most complete of Tolkien's languages. The phonology and grammar of Quenya are strongly influenced by Finnish, Latin, Greek and elements of ancient Germanic languages, and Sindarin is strongly influenced by Welsh.</p>"
+            document.getElementById('logo').innerHTML = "<img src='./assets/images/quenya330.png'>"
+            break;
+        case 'valyrian':
+            console.log(activeLanguage);
+            document.body.style.backgroundColor="#611e1e";
+            document.getElementById("translate-button").style.background="#764949";
+            document.getElementById("clear-button").style.background="#764949";
+            document.getElementById('content').innerHTML = "<h1>Valyrian</h1><p>High Valyrian is the language of the old Valyrian Freehold which was located on the eastern continent of Essos. Much of Essos was once dominated by the Valyrians for thousands of years, stretching from the Free Cities in the west, to Slaver's Bay in the east. The Valyrians forced the peoples they subjugated to speak in (or at least be able to converse in) their language.</p>"
+            document.getElementById('logo').innerHTML = "<img src='./assets/images/targ330.png'>"
+            break;
+        case 'minion':
+            console.log(activeLanguage);
+            document.body.style.backgroundColor="#0072d5";
+            document.getElementById("translate-button").style.background="#002e54";
+            document.getElementById("clear-button").style.background="#002e54";
+            document.getElementById('content').innerHTML = "<h1>Minion</h1><p>The minions' language includes French, Spanish, and food references. In providing the voice of the Minions, Coffin uses words from languages including French, English, Spanish and Italian. There are a lot of food references. For example, 'poulet tiki masala' is French for the Indian chicken dish.</p>"
+            document.getElementById('logo').innerHTML = "<img src='./assets/images/minion330.png'>"
+            break;
+        case 'dothraki':
+            document.body.style.backgroundColor="#a23b00";
+            document.getElementById("translate-button").style.background="#392200";
+            document.getElementById("clear-button").style.background="#392200";
+            document.getElementById('content').innerHTML = "<h1>Dothraki</h1><p>The Dothraki language is a constructed fictional language in George R. R. Martin's fantasy novel series A Song of Ice and Fire and its television adaptation Game of Thrones. It is spoken by the Dothraki, a nomadic people in the series's fictional world.</p>";
+            document.getElementById('logo').innerHTML = "<img src='./assets/images/dothraki330.png'>"
+        default:
+            break;
+    }
+}
+
 function translateButtonClicked() {
-    //e.preventDefault();
     var userInput = $('#text-input').val();
     console.log(userInput);
-    //searchGif(userInput);
     translateInput(userInput);
 }
 
 
 function translateInput(userInput) {
-var activeLanguage = $(".active").text();
 console.log(activeLanguage);
     $.ajax({
             url: 'https://api.funtranslations.com/translate/' + activeLanguage + '.json?text= ' + userInput,
@@ -119,12 +157,6 @@ console.log(activeLanguage);
             console.log(response);
             //displayTranslation(response);
         })
-        var obj = {
-            'elvish': {
-                backgroundColor: '#143325'
-            }
-        }
-        document.getElementById('thisBody').style.backgroundColor = obj['elvish'].backgroundColor
 }
 
 function displayTranslation(response) {

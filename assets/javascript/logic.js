@@ -7,6 +7,7 @@
 
 
 function changeLanguage (active){
+    console.log(active);
     switch (active) {
         case 'elvish':
             
