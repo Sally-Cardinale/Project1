@@ -66,11 +66,11 @@ nav .navbar-nav li a{
 
     <div id="translator">
         <div id="enterText" style="float: left;">
-            <textarea id="text-input">Enter text here</textarea>
+            <textarea id="text-input" placeholder="Enter text here"></textarea>
         </div>
 
         <div id="translation" style="float: right;">
-            <textarea id="text-output">Translation </textarea>
+            <textarea id="text-output" placeholder="Translation"></textarea>
         </div>
 
         <br/>
@@ -172,6 +172,11 @@ function displayTranslation(response) {
     console.log(response.contents.translated);
 
 };
+
+function clearButtonClicked() {
+  document.getElementById("translation-form").reset();
+  console.log(clearButtonClicked);
+}
 
 </script>
 
