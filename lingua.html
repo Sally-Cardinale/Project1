@@ -28,7 +28,7 @@ nav .navbar-nav li a{
 <div id="mainDiv" style="z-index: 1">
 
    <nav class="navbar navbar-expand-lg">
-       <a class="navbar-brand" href="#" style="color: #ccc;">Mytholingua</a>
+       <a class="navbar-brand" href="index.html" style="color: #ccc;">Mytholingua</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -79,8 +79,8 @@ nav .navbar-nav li a{
         <br/>
         <br/>
 
-        <button onclick="translateButtonClicked()" type="button" id="translate-button">Translate</button>
-        <button onclick="clearButtonClicked()" type="button" id="clear-button">Clear</button>
+        <button onclick="translateButtonClicked()" type="button" id="translate-button" class="bottombuttons">Translate</button>
+        <button onclick="clearButtonClicked()" type="button" id="clear-button" class="bottombuttons">Clear</button>
 
 </form>
 
@@ -138,6 +138,13 @@ function changeLanguage (active){
             break;
     }
 }
+
+$(".bottombuttons").hover(function() {
+    $(this).css({opacity: 0.91});
+},
+function() {
+    $(this).css({opacity: 1});
+});
 
 function translateButtonClicked() {
     var userInput = $('#text-input').val();
