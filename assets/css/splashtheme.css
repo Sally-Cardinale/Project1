@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-
-<html lang="en" class="">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="robots" content="noindex">
-    <link href=“https://fonts.googleapis.com/css?family=Raleway” rel=“stylesheet”>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
-    <style>
-        *,
+*,
         *:before,
         *:after {
-            box-sizing: border-box;
+             /* box-sizing: border-box; */
             margin: 0;
             padding: 0;
         }
@@ -20,7 +9,7 @@
         html,
         body {
             height: 100%;
-            overflow: hidden;
+            /* overflow: hidden;  */
         }
 
         body {
@@ -207,11 +196,6 @@
             -webkit-transform: translateY(-10em) rotate(-135.5deg);
             transform: translateY(-10em) rotate(-135.5deg);
         }
-    </style>
-    <style>
-       /* .button-image {
-            border-radius: 50%;
-        } */
 
         body {
             font-size: 20px;
@@ -223,58 +207,5 @@
         .menu-button-text {
             text-align: center;
         }
-    </style>
-    
-</head>
 
-<body>
-    <div class="menu">
-        <div class="btn trigger">
-            <span class="line"></span>
-        </div>
-        <div class="icons">
-            <div class="rotater">
-                <div class="btn btn-icon">
-                    <a href="lingua.html" onclick="updateActiveLanguage('valyrian')">
-                        <img class="button-image" src="assets/images/splash-targ.png" alt="" style: width="100px" ; height="100px">
-                    </a>
-                    <p class="menu-button-text" style="color: #fff">Valyrian</p>
-                </div>
-            </div>
-            <div class="rotater">
-                <div class="btn btn-icon">
-                    <a href="lingua.html">
-                        <img class="button-image" src="assets/images/splash-doth.png" alt="" style: width="100px" ; height="100px">
-                    </a>
-                    <p class="menu-button-text" style="color: #fff">Dothraki</p>
-                </div>
-            </div>
-            <div class="rotater">
-                <div class="btn btn-icon">
-                    <a href="lingua.html">
-                        <img class="button-image" src="assets/images/splash-elvish.png" alt="" style: width="100px" ; height="100px">
-                    </a>
-                    <p class="menu-button-text" style="color: #fff">Elvish</p>
-                </div>
-            </div>
-            <div class="rotater">
-                <div class="btn btn-icon">
-                    <a href="lingua.html">
-                        <img class="button-image" src="./assets/images/splash-minion.png" alt="" style: width="100px" ; height="100px">
-                    </a>
-                    <p class="menu-button-text" style="color: #fff">Minion</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-    <script src="./assets/javascript/jquery-3.3.1.min.js"></script>
-    <script src="./assets/javascript/logic.js"></script>
-</body>
-
-</html>
+        
