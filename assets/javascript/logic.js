@@ -5,7 +5,7 @@
 
 //add class active and remove all other class active (it's a jquery function)
 
-
+// updates the UI based on the language selected.
 var activeLanguage;
 function changeLanguage (active){
     console.log(active);
@@ -51,6 +51,7 @@ function changeLanguage (active){
     }
 }
 
+// displays active language page and hides splash page once a language is selected from the splash page.
 function toggleDisplay() {
     document.getElementById("languageDiv").style.display="block";
     document.styleSheets[0].disabled = false;
@@ -58,6 +59,7 @@ function toggleDisplay() {
 
 }
 
+// updates CSS for translate and clear buttons
 $(".bottombuttons").hover(function() {
     $(this).css({opacity: 0.91});
 },
@@ -65,13 +67,14 @@ function() {
     $(this).css({opacity: 1});
 });
 
+// grabs the text-input to send to the api once the translate button is clicked
 function translateButtonClicked() {
     var userInput = $('#text-input').val();
     console.log(userInput);
     translateInput(userInput);
 }
 
-
+// Calls the correct translation based on the selected/active language
 function translateInput(userInput) {
 console.log(activeLanguage);
     $.ajax({
@@ -85,13 +88,14 @@ console.log(activeLanguage);
         })
 }
 
+// Translation appears in translation (text-output) box
 function displayTranslation(response) {
     $('#text-output').empty();
     document.getElementById("text-output").innerHTML = response.contents.translated;
     console.log(response.contents.translated);
 
 };
-
+// When clear button is clicked the text is cleared and placeholders return
 function clearButtonClicked() {
   document.getElementById("translation-form").reset();
   document.getElementById("text-output").innerHTML= "";
