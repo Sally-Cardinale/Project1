@@ -56,6 +56,7 @@ function toggleDisplay() {
     document.getElementById("languageDiv").style.display="block";
     document.styleSheets[0].disabled = false;
     document.getElementsByClassName("menu")[0].style.display="none";
+    document.getElementById("splash-title").style.display="none";
 
 }
 
