@@ -12,6 +12,7 @@ function changeLanguage (active){
     if (active !== undefined) {
         toggleDisplay();
         activeLanguage = active;  
+        translateButtonClicked();
     }
     
     switch (active) {
