@@ -15,10 +15,21 @@ a:hover {
     color: #ccc;
 }
 
+html,
 body {
-    background-color: #764949;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* width: 100%; */
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+body {
+    background-image: url("../images/grad-bg.png");
     color: #fff;
     font-family: 'Raleway', sans-serif;
+
+
 }
 
 h1 {
@@ -66,8 +77,8 @@ textarea {
 }
 
 button {
-    background-color: #432a2a;
-    color: #fff;
+    background-color: #d3d3d3;
+    color: #000;
     font-size: 18px;
     border: 0px;
     padding: 10px;
@@ -76,6 +87,6 @@ button {
 }
 
 button:hover {
-    background-color: #4b2f2f;
-    color: #fff;
+    background-color: #afafaf;
+    color: #000;
 }
