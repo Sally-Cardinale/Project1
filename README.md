@@ -6,3 +6,6 @@ This project solved the problem of taking user inputted text and returning the c
 2. Dothraki
 3. Elvish
 4. Minion
+
+
+Demo: https://sally-cardinale.github.io/Project1/
